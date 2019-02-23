@@ -115,7 +115,7 @@
 
 
 <p>A Cartesian grid with regularly spaces cells and faces so that $Δx$, $Δy$, and $Δz$ are constants. Fields are stored using floating-point values of type T.</p>
-<p><a target='_blank' href='https://github.com/ali-ramadhan/Oceananigans.jl/blob/381a182dcca73b4b151c8129c308c23f92958996/src/grids.jl#L5-L11' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/ali-ramadhan/Oceananigans.jl/blob/30dc8f6340daf70e74daf43f3adecead578be361/src/grids.jl#L5-L11' class='documenter-source'>source</a><br></p>
 <p><a id='Oceananigans.RegularCartesianGrid-Tuple{ModelMetadata,Any,Any}' href='#Oceananigans.RegularCartesianGrid-Tuple{ModelMetadata,Any,Any}'>#</a>
 <strong><code>Oceananigans.RegularCartesianGrid</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>RegularCartesianGrid(metadata::ModelMetadata, N, L)
@@ -128,20 +128,41 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/ali-ramadhan/Oceananigans.jl/blob/381a182dcca73b4b151c8129c308c23f92958996/src/grids.jl#L49-L60' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/ali-ramadhan/Oceananigans.jl/blob/30dc8f6340daf70e74daf43f3adecead578be361/src/grids.jl#L49-L60' class='documenter-source'>source</a><br></p>
 <p><a id='Fields-1'></a></p>
 <h2 id="fields">Fields</h2>
-<div class="codehilite"><pre><span></span>CellField
-FaceFieldX
-FaceFieldY
-FaceFieldZ
-CellField(grid::Grid)
-FaceFieldX(grid::Grid)
-FaceFieldY(grid::Grid)
-FaceFieldZ(grid::Grid)
+<p><a id='Oceananigans.CellField' href='#Oceananigans.CellField'>#</a>
+<strong><code>Oceananigans.CellField</code></strong> &mdash; <em>Type</em>.</p>
+<div class="codehilite"><pre><span></span>CellField{T,G&lt;:Grid{T}} &lt;: Field{G}
 </pre></div>
 
 
+<p>A cell-centered field defined on a grid <code>G</code> whose values are stored as floating-point values of type T.</p>
+<p><a target='_blank' href='https://github.com/ali-ramadhan/Oceananigans.jl/blob/30dc8f6340daf70e74daf43f3adecead578be361/src/fields.jl#L6-L11' class='documenter-source'>source</a><br></p>
+<p><a id='Oceananigans.FaceFieldX' href='#Oceananigans.FaceFieldX'>#</a>
+<strong><code>Oceananigans.FaceFieldX</code></strong> &mdash; <em>Type</em>.</p>
+<div class="codehilite"><pre><span></span>FaceFieldX{T,G&lt;:Grid{T}} &lt;: FaceField{G}
+</pre></div>
+
+
+<p>An x-face-centered field defined on a grid <code>G</code> whose values are stored as floating-point values of type T.</p>
+<p><a target='_blank' href='https://github.com/ali-ramadhan/Oceananigans.jl/blob/30dc8f6340daf70e74daf43f3adecead578be361/src/fields.jl#L18-L23' class='documenter-source'>source</a><br></p>
+<p><a id='Oceananigans.FaceFieldY' href='#Oceananigans.FaceFieldY'>#</a>
+<strong><code>Oceananigans.FaceFieldY</code></strong> &mdash; <em>Type</em>.</p>
+<div class="codehilite"><pre><span></span>FaceFieldY{T,G&lt;:Grid{T}} &lt;: FaceField{G}
+</pre></div>
+
+
+<p>A y-face-centered field defined on a grid <code>G</code> whose values are stored as floating-point values of type T.</p>
+<p><a target='_blank' href='https://github.com/ali-ramadhan/Oceananigans.jl/blob/30dc8f6340daf70e74daf43f3adecead578be361/src/fields.jl#L30-L35' class='documenter-source'>source</a><br></p>
+<p><a id='Oceananigans.FaceFieldZ' href='#Oceananigans.FaceFieldZ'>#</a>
+<strong><code>Oceananigans.FaceFieldZ</code></strong> &mdash; <em>Type</em>.</p>
+<div class="codehilite"><pre><span></span>FaceFieldZ{T,G&lt;:Grid{T}} &lt;: FaceField{G}
+</pre></div>
+
+
+<p>A z-face-centered field defined on a grid <code>G</code> whose values are stored as floating-point values of type T.</p>
+<p><a target='_blank' href='https://github.com/ali-ramadhan/Oceananigans.jl/blob/30dc8f6340daf70e74daf43f3adecead578be361/src/fields.jl#L42-L47' class='documenter-source'>source</a><br></p>
 <p><a id='Operators-1'></a></p>
 <h2 id="operators">Operators</h2>
 <p><a id='Difference-operators-1'></a></p>
@@ -215,5 +236,5 @@ FaceFieldZ(grid::Grid)
 
 <!--
 MkDocs version : 0.17.5
-Build Date UTC : 2019-02-23 17:53:21
+Build Date UTC : 2019-02-23 18:46:20
 -->
