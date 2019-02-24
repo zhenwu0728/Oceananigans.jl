@@ -21,15 +21,15 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "Installation instructions",
     "category": "section",
-    "text": "julia> ]\n(v1.1) pkg> add Oceananigans (it needs to be pulled into METADATA.jl first...)"
+    "text": "Oceananigans is still not an official Julia package. But you can install it using the built-in package manager (accessed by pressing ] in the Julia command prompt)julia>]\n(v1.1) pkg> developNote: We recommend using Julia 1.1 with Oceananigans."
 },
 
 {
-    "location": "#Running-your-first-example-1",
+    "location": "#Running-your-first-model-1",
     "page": "Home",
-    "title": "Running your first example",
+    "title": "Running your first model",
     "category": "section",
-    "text": ""
+    "text": "Let\'s initialize a 3D ocean with 100times100times50 grid points on a 2times2times1 km domain and simulate it for 10 time steps using steps of 60 seconds each (for a total of 10 minutes of simulation time).using Oceananigans\nNx, Ny, Nz = 100, 100, 50      # Number of grid points in each dimension.\nLx, Ly, Lz = 2000, 2000, 1000  # Domain size (meters).\nNt, Δt = 10, 60                # Number of time steps, time step size (seconds).\n\nmodel = Model((Nx, Ny, Nz), (Lx, Ly, Lz))\ntime_step!(model, Nt, Δt)You just simulated a 3D patch of ocean, it\'s that easy! It was a still lifeless ocean so nothing interesting happened but now you can add interesting dynamics and plot the output."
 },
 
 {
@@ -37,7 +37,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "CPU example",
     "category": "section",
-    "text": "We can have a simple 2D example running on the CPU with a simple visualization. Deep convection?"
+    "text": "Let\'s add something to make the ocean dynamics a bit more interesting."
 },
 
 {
@@ -45,7 +45,79 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "GPU example",
     "category": "section",
-    "text": "A beefier more impressive 3D example?"
+    "text": "If you have access to an Nvidia CUDA-enabled graphics processing unit (GPU) you can run ocean models on it."
+},
+
+{
+    "location": "examples/#",
+    "page": "Examples",
+    "title": "Examples",
+    "category": "page",
+    "text": ""
+},
+
+{
+    "location": "examples/#Examples-1",
+    "page": "Examples",
+    "title": "Examples",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "examples/#D-models-1",
+    "page": "Examples",
+    "title": "2D models",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "examples/#D-models-2",
+    "page": "Examples",
+    "title": "1D models",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "examples/#Writing-model-output-to-NetCDF-1",
+    "page": "Examples",
+    "title": "Writing model output to NetCDF",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "examples/#Checkpointing-a-model-1",
+    "page": "Examples",
+    "title": "Checkpointing a model",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "examples/#Restarting-a-model-from-a-checkpoint-1",
+    "page": "Examples",
+    "title": "Restarting a model from a checkpoint",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "examples/#Basic-diagnostics-1",
+    "page": "Examples",
+    "title": "Basic diagnostics",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "examples/#Adding-your-own-diagnostics-1",
+    "page": "Examples",
+    "title": "Adding your own diagnostics",
+    "category": "section",
+    "text": ""
 },
 
 {
