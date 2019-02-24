@@ -29,7 +29,23 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "Running your first example",
     "category": "section",
-    "text": "Instructions for running something like 3D deep convection? Maybe 2D deep convection so it\'s easy to generate a first visualization?"
+    "text": ""
+},
+
+{
+    "location": "#CPU-example-1",
+    "page": "Home",
+    "title": "CPU example",
+    "category": "section",
+    "text": "We can have a simple 2D example running on the CPU with a simple visualization. Deep convection?"
+},
+
+{
+    "location": "#GPU-example-1",
+    "page": "Home",
+    "title": "GPU example",
+    "category": "section",
+    "text": "A beefier more impressive 3D example?"
 },
 
 {
