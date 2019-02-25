@@ -21,7 +21,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "Installation instructions",
     "category": "section",
-    "text": "Oceananigans is still not an official Julia package. But you can install it using the built-in package manager (accessed by pressing ] in the Julia command prompt)julia>]\n(v1.1) pkg> developNote: We recommend using Julia 1.1 with Oceananigans."
+    "text": "Oceananigans is still not an official Julia package. But you can install it using the built-in package manager (accessed by pressing ] in the Julia command prompt)julia>]\n(v1.1) pkg> develop https://github.com/ali-ramadhan/Oceananigans.jl.git\n(v1.1) pkg> test OceananigansNote: We recommend using Julia 1.1 with Oceananigans."
 },
 
 {
