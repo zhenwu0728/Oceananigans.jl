@@ -13,7 +13,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "Oceananigans.jl",
     "category": "section",
-    "text": "(Image: Project Status: Active – The project has reached a stable, usable state and is being actively developed.) (Image: MIT license) (Image: Latest documentation) (Image: Build Status) (Image: Pipeline status) (Image: codecov) (Image: Ask us anything)Oceananigans is a fast and friendly non-hydrostatic n-dimensional ocean model that generically runs on CPU and GPU architectures. It is written 100% in Julia."
+    "text": "Oceananigans is a fast non-hydrostatic ocean model written in Julia that can be run in 2 or 3 dimensions on CPUs and GPUs."
 },
 
 {
@@ -21,7 +21,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "Installation instructions",
     "category": "section",
-    "text": "Oceananigans is still not an official Julia package. But you can install it using the built-in package manager (accessed by pressing ] in the Julia command prompt)julia>]\n(v1.1) pkg> develop https://github.com/ali-ramadhan/Oceananigans.jl.git\n(v1.1) pkg> test OceananigansNote: We recommend using Julia 1.1 with Oceananigans."
+    "text": "Oceananigans is still not an official Julia package. But you can install it using the built-in package manager (accessed by pressing ] in the Julia command prompt)julia>]\n(v1.1) pkg> add https://github.com/ali-ramadhan/Oceananigans.jl.gitNote: We recommend using Julia 1.1 with Oceananigans."
 },
 
 {
