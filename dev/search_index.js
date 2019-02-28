@@ -409,54 +409,6 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "internal/operators/#Oceananigans.Operators.δx!-Tuple{RegularCartesianGrid,CellField,FaceField}",
-    "page": "Operators",
-    "title": "Oceananigans.Operators.δx!",
-    "category": "method",
-    "text": "δx!(g::RegularCartesianGrid, f::CellField, δxf::FaceField)\n\nCompute the difference delta_x(f) = f_E - f_W between the eastern and western cells of a cell-centered field f and store it in a face-centered field δxf, assuming both fields are defined on a regular Cartesian grid g with periodic boundary condition in the x-direction.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/operators/#Oceananigans.Operators.δx!-Tuple{RegularCartesianGrid,FaceField,CellField}",
-    "page": "Operators",
-    "title": "Oceananigans.Operators.δx!",
-    "category": "method",
-    "text": "δx!(g::RegularCartesianGrid, f::FaceField, δxf::CellField)\n\nCompute the difference delta_x(f) = f_E - f_W between the eastern and western faces of a face-centered field f and store it in a cell-centered field δxf, assuming both fields are defined on a regular Cartesian grid g with periodic boundary conditions in the x-direction.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/operators/#Oceananigans.Operators.δy!-Tuple{RegularCartesianGrid,CellField,FaceField}",
-    "page": "Operators",
-    "title": "Oceananigans.Operators.δy!",
-    "category": "method",
-    "text": "δy!(g::RegularCartesianGrid, f::CellField, δyf::FaceField)\n\nCompute the difference delta_y(f) = f_N - f_S between the northern and southern cells of a cell-centered field f and store it in a face-centered field δyf, assuming both fields are defined on a regular Cartesian grid g with periodic boundary condition in the y-direction.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/operators/#Oceananigans.Operators.δy!-Tuple{RegularCartesianGrid,FaceField,CellField}",
-    "page": "Operators",
-    "title": "Oceananigans.Operators.δy!",
-    "category": "method",
-    "text": "δy!(g::RegularCartesianGrid, f::FaceField, δyf::CellField)\n\nCompute the difference delta_y(f) = f_N - f_S between the northern and southern faces of a face-centered field f and store it in a cell-centered field δyf, assuming both fields are defined on a regular Cartesian grid g with periodic boundary condition in the y-direction.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/operators/#Oceananigans.Operators.δz!-Tuple{RegularCartesianGrid,CellField,FaceField}",
-    "page": "Operators",
-    "title": "Oceananigans.Operators.δz!",
-    "category": "method",
-    "text": "δz!(g::RegularCartesianGrid, f::CellField, δzf::FaceField)\n\nCompute the difference delta_z(f) = f_T - f_B between the top and bottom cells of a cell-centered field f and store it in a face-centered field δzf, assuming both fields are defined on a regular Cartesian grid g with Neumann boundary condition in the z-direction.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/operators/#Oceananigans.Operators.δz!-Tuple{RegularCartesianGrid,FaceField,CellField}",
-    "page": "Operators",
-    "title": "Oceananigans.Operators.δz!",
-    "category": "method",
-    "text": "δz!(g::RegularCartesianGrid, f::FaceField, δzf::CellField)\n\nCompute the difference delta_z(f) = f_T - f_B between the top and bottom faces of a face-centered field f and store it in a cell-centered field δzf, assuming both fields are defined on a regular Cartesian grid g with Neumann boundary condition in the z-direction.\n\n\n\n\n\n"
-},
-
-{
     "location": "internal/operators/#Difference-operators-1",
     "page": "Operators",
     "title": "Difference operators",
@@ -465,27 +417,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "internal/operators/#Oceananigans.Operators.avgx!-Tuple{RegularCartesianGrid,CellField,FaceField}",
-    "page": "Operators",
-    "title": "Oceananigans.Operators.avgx!",
-    "category": "method",
-    "text": "avgx!(g::RegularCartesianGrid, f::CellField, favgx::FaceField)\n\nCompute the average overlinef^x = fracf_E + f_W2 between the eastern and western cells of a cell-centered field f and store it in a g face-centered field favgx, assuming both fields are defined on a regular Cartesian grid g with periodic boundary conditions in the x-direction.\n\n\n\n\n\n"
-},
-
-{
     "location": "internal/operators/#Averaging-operators-1",
     "page": "Operators",
     "title": "Averaging operators",
     "category": "section",
     "text": "avgx!(g::RegularCartesianGrid, f::CellField, favgx::FaceField)"
-},
-
-{
-    "location": "internal/operators/#Oceananigans.Operators.div!-Tuple{RegularCartesianGrid,FaceFieldX,FaceFieldY,FaceFieldZ,CellField,OperatorTemporaryFields}",
-    "page": "Operators",
-    "title": "Oceananigans.Operators.div!",
-    "category": "method",
-    "text": "div!(g, fx, fy, fz, div, tmp)\n\nCompute the divergence.\n\n\n\n\n\n"
 },
 
 {
