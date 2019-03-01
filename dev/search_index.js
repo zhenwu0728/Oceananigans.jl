@@ -309,7 +309,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Fields",
     "title": "Oceananigans.CellField",
     "category": "type",
-    "text": "CellField{T,G<:Grid{T}} <: Field{G}\n\nA cell-centered field defined on a grid G whose values are stored as floating-point values of type T.\n\n\n\n\n\n"
+    "text": "CellField{T,G<:Grid{T}} <: Field\n\nA cell-centered field defined on a grid G whose values are stored as floating-point values of type T.\n\n\n\n\n\n"
 },
 
 {
