@@ -21,7 +21,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "Installation instructions",
     "category": "section",
-    "text": "Oceananigans is still not an official Julia package. But you can install it using the built-in package manager (accessed by pressing ] in the Julia command prompt)julia>]\n(v1.1) pkg> add https://github.com/ali-ramadhan/Oceananigans.jl.gitNote: We recommend using Julia 1.1 with Oceananigans."
+    "text": "Oceananigans is still not an official Julia package. But you can install it using the built-in package manager (accessed by pressing ] in the Julia command prompt)julia>]\n(v1.1) pkg> add https://github.com/climate-machine/Oceananigans.jl.gitNote: We recommend using Julia 1.1 with Oceananigans."
 },
 
 {
@@ -293,15 +293,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Grids",
     "title": "Oceananigans.RegularCartesianGrid",
     "category": "type",
-    "text": "RegularCartesianGrid\n\nA Cartesian grid with regularly spaces cells and faces so that Δx, Δy, and Δz are constants. Fields are stored using floating-point values of type T.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/grids/#Oceananigans.RegularCartesianGrid-Tuple{ModelMetadata,Any,Any}",
-    "page": "Grids",
-    "title": "Oceananigans.RegularCartesianGrid",
-    "category": "method",
-    "text": "RegularCartesianGrid(metadata::ModelMetadata, N, L)\n\nCreate a regular Cartesian grid with size N = (N_x N_y N_z) and domain size L = (L_x L_y L_z) where fields are stored using floating-point values of type T.\n\nExamples\n\njulia> g = RegularCartesianGrid((16, 16, 8), (2π, 2π, 2π))\n\n\n\n\n\n"
+    "text": "RegularCartesianGrid{T<:AbstractFloat, R<:AbstractRange} <: Grid\n\nA Cartesian grid with regularly spaces cells and faces so that Δx, Δy, and Δz are constants. Fields are stored using floating-point values of type T. The cell-centered and face-centered coordinate ranges are stored as ranges of type A.\n\n\n\n\n\n"
 },
 
 {
@@ -309,7 +301,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Grids",
     "title": "Grids",
     "category": "section",
-    "text": "RegularCartesianGrid\r\nRegularCartesianGrid(metadata::ModelMetadata, N, L)"
+    "text": "RegularCartesianGrid"
 },
 
 {
@@ -325,7 +317,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Fields",
     "title": "Oceananigans.CellField",
     "category": "type",
-    "text": "CellField{T,G<:Grid{T}} <: Field\n\nA cell-centered field defined on a grid G whose values are stored as floating-point values of type T.\n\n\n\n\n\n"
+    "text": "CellField{A<:AbstractArray, G<:Grid} <: Field\n\nA cell-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
 },
 
 {
@@ -333,7 +325,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Fields",
     "title": "Oceananigans.FaceFieldX",
     "category": "type",
-    "text": "FaceFieldX{T,G<:Grid{T}} <: FaceField{G}\n\nAn x-face-centered field defined on a grid G whose values are stored as floating-point values of type T.\n\n\n\n\n\n"
+    "text": "FaceFieldX{A<:AbstractArray, G<:Grid} <: FaceField\n\nAn x-face-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
 },
 
 {
@@ -341,7 +333,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Fields",
     "title": "Oceananigans.FaceFieldY",
     "category": "type",
-    "text": "FaceFieldY{T,G<:Grid{T}} <: FaceField{G}\n\nA y-face-centered field defined on a grid G whose values are stored as floating-point values of type T.\n\n\n\n\n\n"
+    "text": "FaceFieldY{A<:AbstractArray, G<:Grid} <: FaceField\n\nA y-face-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
 },
 
 {
@@ -349,7 +341,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Fields",
     "title": "Oceananigans.FaceFieldZ",
     "category": "type",
-    "text": "FaceFieldZ{T,G<:Grid{T}} <: FaceField{G}\n\nA z-face-centered field defined on a grid G whose values are stored as floating-point values of type T.\n\n\n\n\n\n"
+    "text": "FaceFieldZ{T, G<:Grid{T}} <: FaceField{G}\n\nA z-face-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
 },
 
 {
@@ -357,47 +349,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Fields",
     "title": "Oceananigans.EdgeField",
     "category": "type",
-    "text": "EdgeField{T<:AbstractArray} <: Field\n\nA field defined on a grid G whose values lie on the edges of the cells.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/fields/#Oceananigans.CellField-Tuple{ModelMetadata,Grid,Any}",
-    "page": "Fields",
-    "title": "Oceananigans.CellField",
-    "category": "method",
-    "text": "CellField(metadata::ModelMetadata, grid::Grid, T)\n\nConstruct a CellField whose values are defined at the center of a cell.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/fields/#Oceananigans.FaceFieldX-Tuple{ModelMetadata,Grid,Any}",
-    "page": "Fields",
-    "title": "Oceananigans.FaceFieldX",
-    "category": "method",
-    "text": "FaceFieldX(metadata::ModelMetadata, grid::Grid, T)\n\nA Field whose values are defined on the x-face of a cell.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/fields/#Oceananigans.FaceFieldY-Tuple{ModelMetadata,Grid,Any}",
-    "page": "Fields",
-    "title": "Oceananigans.FaceFieldY",
-    "category": "method",
-    "text": "FaceFieldY(metadata::ModelMetadata, grid::Grid, T)\n\nA Field whose values are defined on the y-face of a cell.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/fields/#Oceananigans.FaceFieldZ-Tuple{ModelMetadata,Grid,Any}",
-    "page": "Fields",
-    "title": "Oceananigans.FaceFieldZ",
-    "category": "method",
-    "text": "FaceFieldZ(metadata::ModelMetadata, grid::Grid, T)\n\nA Field whose values are defined on the z-face of a cell.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/fields/#Oceananigans.EdgeField-Tuple{ModelMetadata,Grid,Any}",
-    "page": "Fields",
-    "title": "Oceananigans.EdgeField",
-    "category": "method",
-    "text": "FEdgeField(metadata::ModelMetadata, grid::Grid, T)\n\nA Field whose values are defined on the edges of a cell.\n\n\n\n\n\n"
+    "text": "EdgeField{T<:AbstractArray} <: Field\n\nAn edge-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
 },
 
 {
@@ -405,7 +357,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Fields",
     "title": "Fields",
     "category": "section",
-    "text": "CellField\r\nFaceFieldX\r\nFaceFieldY\r\nFaceFieldZ\r\nEdgeField\r\nCellField(metadata::ModelMetadata, grid::Grid, T)\r\nFaceFieldX(metadata::ModelMetadata, grid::Grid, T)\r\nFaceFieldY(metadata::ModelMetadata, grid::Grid, T)\r\nFaceFieldZ(metadata::ModelMetadata, grid::Grid, T)\r\nEdgeField(metadata::ModelMetadata, grid::Grid, T)"
+    "text": "CellField\r\nFaceFieldX\r\nFaceFieldY\r\nFaceFieldZ\r\nEdgeField"
 },
 
 {
