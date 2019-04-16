@@ -29,7 +29,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "Running your first model",
     "category": "section",
-    "text": "Let\'s initialize a 3D ocean with 100times100times50 grid points on a 2times2times1 km domain and simulate it for 10 time steps using steps of 60 seconds each (for a total of 10 minutes of simulation time).using Oceananigans\nNx, Ny, Nz = 100, 100, 50      # Number of grid points in each dimension.\nLx, Ly, Lz = 2000, 2000, 1000  # Domain size (meters).\nNt, Δt = 10, 60                # Number of time steps, time step size (seconds).\n\nmodel = Model((Nx, Ny, Nz), (Lx, Ly, Lz))\ntime_step!(model, Nt, Δt)You just simulated a 3D patch of ocean, it\'s that easy! It was a still lifeless ocean so nothing interesting happened but now you can add interesting dynamics and plot the output."
+    "text": "Let\'s initialize a 3D ocean with 100times100times50 grid points on a 2times2times1 km domain and simulate it for 10 time steps using steps of 60 seconds each (for a total of 10 minutes of simulation time).using Oceananigans\nNx, Ny, Nz = 100, 100, 50      # Number of grid points in each dimension.\nLx, Ly, Lz = 2000, 2000, 1000  # Domain size (meters).\nNt, Δt = 10, 60                # Number of time steps, time step size (seconds).\n\nmodel = Model(N=(Nx, Ny, Nz), L=(Lx, Ly, Lz))\ntime_step!(model, Nt, Δt)You just simulated a 3D patch of ocean, it\'s that easy! It was a still lifeless ocean so nothing interesting happened but now you can add interesting dynamics and plot the output."
 },
 
 {
