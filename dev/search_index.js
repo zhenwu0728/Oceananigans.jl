@@ -349,7 +349,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Fields",
     "title": "Oceananigans.FaceFieldZ",
     "category": "type",
-    "text": "FaceFieldZ{T, G<:Grid{T}} <: FaceField{G}\n\nA z-face-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
+    "text": "FaceFieldZ{A<:AbstractArray, G<:Grid} <: Field\n\nA z-face-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
 },
 
 {
@@ -357,7 +357,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Fields",
     "title": "Oceananigans.EdgeField",
     "category": "type",
-    "text": "EdgeField{T<:AbstractArray} <: Field\n\nAn edge-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
+    "text": "EdgeField{A<:AbstractArray, G<:Grid} <: Field\n\nAn edge-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
 },
 
 {
