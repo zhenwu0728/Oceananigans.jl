@@ -7,7 +7,7 @@ mutable struct Model{A<:Architecture, Grid, TC, BCS<:ModelBoundaryConditions, T,
               arch :: A                  # Computer `Architecture` on which `Model` is run.
               grid :: Grid               # Grid of physical points on which `Model` is solved.
              clock :: Clock{T}           # Tracks iteration number and simulation time of `Model`.
-               eos :: EOS                # Defines relationship between temperature,  salinity, and 
+               eos :: EOS                # Defines relationship between temperature,  salinity, and
                                          # buoyancy in the Boussinesq vertical momentum equation.
          constants :: PC                 # Set of physical constants, inc. gravitational acceleration.
         velocities :: VC                 # Container for velocity fields `u`, `v`, and `w`.
@@ -39,8 +39,8 @@ function Model(;
     float_type = Float64,
           grid = RegularCartesianGrid(float_type, N, L),
     # Isotropic transport coefficients (exposed to `Model` constructor for convenience)
-             ν = 1.05e-6, νh=ν, νv=ν, 
-             κ = 1.43e-7, κh=κ, κv=κ, 
+             ν = 1.05e-6, νh=ν, νv=ν,
+             κ = 1.43e-7, κh=κ, κv=κ,
        closure = ConstantAnisotropicDiffusivity(float_type, νh=νh, νv=νv, κh=κh, κv=κv),
     # Time stepping
     start_time = 0,
@@ -85,23 +85,14 @@ add_bcs!(model::Model; kwargs...) = add_bcs(model.boundary_conditions; kwargs...
 
 function initialize_with_defaults!(eos, tracers, sets...)
     # Default tracer initial condition is deteremined by eos.
-<<<<<<< HEAD
-    tracers.S.data.parent    .= eos.S₀
-    tracers.T.data.parent    .= eos.T₀
-=======
     underlying_data(tracers.S) .= eos.S₀
     underlying_data(tracers.T) .= eos.T₀
->>>>>>> master
 
     # Set all further fields to 0
     for set in sets
         for fldname in propertynames(set)
             fld = getproperty(set, fldname)
-<<<<<<< HEAD
-            fld.data.parent .= 0 # promotes to eltype of fld.data
-=======
             underlying_data(fld) .= 0 # promotes to eltype of fld.data
->>>>>>> master
         end
     end
 end
