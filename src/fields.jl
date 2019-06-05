@@ -165,6 +165,8 @@ function fill_halo_regions!(arch::Architecture, grid::Grid, fields...)
         @views @inbounds @. f.parent[Nx+Hx+1:Nx+2Hx, :, :] = f.parent[1+Hx:2Hx,   :, :]
         @views @inbounds @. f.parent[:, 1:Hy,           :] = f.parent[:, Ny+1:Ny+Hy, :]
         @views @inbounds @. f.parent[:, Ny+Hy+1:Ny+2Hy, :] = f.parent[:, 1+Hy:2Hy,   :]
+        @views @inbounds @. f.parent[:, :,           1:Hz] = f.parent[:, :, Nz+1:Nz+Hz]
+        @views @inbounds @. f.parent[:, :, Nz+Hz+1:Nz+2Hz] = f.parent[:, :,   1+Hz:2Hz]
     end
 
     # max_threads = 256
