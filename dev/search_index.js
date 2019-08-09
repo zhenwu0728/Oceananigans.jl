@@ -321,46 +321,6 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "internal/fields/#Oceananigans.CellField",
-    "page": "Fields",
-    "title": "Oceananigans.CellField",
-    "category": "type",
-    "text": "CellField{A<:AbstractArray, G<:Grid} <: Field\n\nA cell-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/fields/#Oceananigans.FaceFieldX",
-    "page": "Fields",
-    "title": "Oceananigans.FaceFieldX",
-    "category": "type",
-    "text": "FaceFieldX{A<:AbstractArray, G<:Grid} <: FaceField\n\nAn x-face-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/fields/#Oceananigans.FaceFieldY",
-    "page": "Fields",
-    "title": "Oceananigans.FaceFieldY",
-    "category": "type",
-    "text": "FaceFieldY{A<:AbstractArray, G<:Grid} <: FaceField\n\nA y-face-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/fields/#Oceananigans.FaceFieldZ",
-    "page": "Fields",
-    "title": "Oceananigans.FaceFieldZ",
-    "category": "type",
-    "text": "FaceFieldZ{A<:AbstractArray, G<:Grid} <: Field\n\nA z-face-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
-},
-
-{
-    "location": "internal/fields/#Oceananigans.EdgeField",
-    "page": "Fields",
-    "title": "Oceananigans.EdgeField",
-    "category": "type",
-    "text": "EdgeField{A<:AbstractArray, G<:Grid} <: Field\n\nAn edge-centered field defined on a grid G whose values are stored in an A.\n\n\n\n\n\n"
-},
-
-{
     "location": "internal/fields/#Fields-1",
     "page": "Fields",
     "title": "Fields",
