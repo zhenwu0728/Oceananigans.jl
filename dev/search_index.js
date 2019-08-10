@@ -237,7 +237,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Numerical algorithm",
     "title": "Viscous terms",
     "category": "section",
-    "text": "Viscous dissipation operators are discretized similarly to the momentum advection operators and so there is a different one for each direction. For example, the vertical diffusion operator is discretized asbeginmultline\r\n    bnabla cdotp (nu bnabla w)\r\n    = frac1V left\r\n        delta_x^e rightarrow f left( nu_h overlineA_x^xf rightarrow e delta_x^f rightarrow e w right)\r\n        + delta_y^e rightarrow f left( nu_h overlineA_y^yf rightarrow e delta_y^f rightarrow e w right) \r\n        + delta_z^c rightarrow f left( nu_v overlineA_z^zf rightarrow c delta_z^f rightarrow c w right)\r\n    right \r\nendmultlinewhere nu is the eddy viscosity.[Need notes on boundary conditions.]"
+    "text": "Viscous dissipation operators are discretized similarly to the momentum advection operators and so there is a different one for each direction. For example, the vertical diffusion operator is discretized asbeginmultline\r\n    bnabla cdotp (nu bnabla w)\r\n    = frac1V left\r\n        delta_x^e rightarrow f left( nu_h overlineA_x^xf rightarrow e delta_x^f rightarrow e w right)\r\n        + delta_y^e rightarrow f left( nu_h overlineA_y^yf rightarrow e delta_y^f rightarrow e w right)\r\n        + delta_z^c rightarrow f left( nu_v overlineA_z^zf rightarrow c delta_z^f rightarrow c w right)\r\n    right \r\nendmultlinewhere nu is the eddy viscosity.[Need notes on boundary conditions.]"
 },
 
 {
