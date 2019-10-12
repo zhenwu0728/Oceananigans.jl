@@ -76,7 +76,7 @@ function adams_bashforth_time_step!(model, U, C, P, K, Gⁿ, G⁻, Δt, χ)
     fill_halo_regions!(P.pNHS, model.boundary_conditions.pressure, arch, grid)
 
     # Complete pressure correction step:
-    @launch device(arch) config=launch_config(grid, 3) update_velocities_and_tracers!(grid, U, C, P.pNHS, Gⁿ, Δt)
+    @launch device(arch) config=launch_config(grid, 3) update_velocities_and_tracers!(grid, Δt, U, C, P.pNHS, Gⁿ)
 
     # Recompute vertical velocity w from continuity equation to ensure incompressibility
     fill_halo_regions!(U, model.boundary_conditions.solution[1:3], arch, grid, bc_args...)
@@ -428,7 +428,7 @@ and the tracers via
 
 Note that the vertical velocity is not explicitly time stepped.
 """
-function update_velocities_and_tracers!(grid, U, C, pNHS, Gⁿ, Δt)
+function update_velocities_and_tracers!(grid, Δt, U, C, pNHS, Gⁿ)
     @loop for k in (1:grid.Nz; (blockIdx().z - 1) * blockDim().z + threadIdx().z)
         @loop for j in (1:grid.Ny; (blockIdx().y - 1) * blockDim().y + threadIdx().y)
             @loop for i in (1:grid.Nx; (blockIdx().x - 1) * blockDim().x + threadIdx().x)
@@ -444,7 +444,8 @@ end
 
 @inline function update_tracers!(C::NamedTuple{S, NTuple{N, T}}, i, j, k, Δt, Gⁿ) where {N, S, T}
     ntuple(Val(N)) do tracer_index
-        @inbounds C[tracer_index][i, j, k] += Gⁿ[3+tracer_index][i, j, k] * Δt
+        solution_index = 3 + tracer_index
+        @inbounds C[tracer_index][i, j, k] += Gⁿ[solution_index][i, j, k] * Δt
     end
     return nothing
 end
