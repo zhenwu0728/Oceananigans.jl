@@ -255,7 +255,9 @@ Return `κ ∂x c`, where `κ` is a function that computes
 diffusivity at cell centers (location `ccc`), and `c` is an array of scalar
 data located at cell centers.
 """
-@inline function κ_∂x_c(i, j, k, grid, c, tracer_index, closure::AbstractSmagorinsky, νₑ) 
+@inline function κ_∂x_c(i, j, k, grid, c, ::Val{tracer_index}, closure::AbstractSmagorinsky, 
+                        νₑ) where tracer_index
+
     @inbounds Pr = closure.Pr[tracer_index]
     @inbounds κ = closure.κ[tracer_index]
 
@@ -272,7 +274,9 @@ Return `κ ∂y c`, where `κ` is a function that computes
 diffusivity at cell centers (location `ccc`), and `c` is an array of scalar
 data located at cell centers.
 """
-@inline function κ_∂y_c(i, j, k, grid, c, tracer_index, closure::AbstractSmagorinsky, νₑ) 
+@inline function κ_∂y_c(i, j, k, grid, c, ::Val{tracer_index}, closure::AbstractSmagorinsky, 
+                        νₑ) where tracer_index  
+
     @inbounds Pr = closure.Pr[tracer_index]
     @inbounds κ = closure.κ[tracer_index]
 
@@ -289,7 +293,9 @@ Return `κ ∂z c`, where `κ` is a function that computes
 diffusivity at cell centers (location `ccc`), and `c` is an array of scalar
 data located at cell centers.
 """
-@inline function κ_∂z_c(i, j, k, grid, c, tracer_index, closure::AbstractSmagorinsky, νₑ) 
+@inline function κ_∂z_c(i, j, k, grid, c, ::Val{tracer_index}, closure::AbstractSmagorinsky, 
+                        νₑ) where tracer_index 
+
     @inbounds Pr = closure.Pr[tracer_index]
     @inbounds κ = closure.κ[tracer_index]
 

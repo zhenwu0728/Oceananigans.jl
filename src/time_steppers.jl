@@ -167,12 +167,19 @@ function calculate_interior_source_terms!(G, arch, grid, coriolis, closure, U, C
     @launch device(arch) threads=(Tx, Ty) blocks=(Bx, By, Bz) calculate_Gw!(G.w, grid, coriolis, closure, U, C, K, F, 
                                                                             parameters, time)
 
-    for (tracer_index, c) in enumerate(values(C))
-        @launch device(arch) threads=(Tx, Ty) blocks=(Bx, By, Bz) calculate_Gc!(G[3+tracer_index], grid, closure, c, tracer_index, 
-                                                                                U, C, K, F[3+tracer_index], parameters, time)
-                                                                                
-    end
+    calculate_interior_tracer_source_terms!(G, (Bx, By, Bz), arch, grid, closure, U, C, K, F, parameters, time)
 
+    return nothing
+end
+
+function calculate_interior_tracer_source_terms!(G, blocks, arch, grid, closure, U, C::NamedTuple{S, NTuple{N, T}}, 
+                                                 K, F, parameters, time) where {N, S, T}
+    ntuple(Val(N)) do tracer_index
+        c = C[tracer_index]
+        @launch device(arch) threads=(Tx, Ty) blocks=blocks calculate_Gc!(G[3+tracer_index], grid, closure, c, 
+                                                                          Val(tracer_index), U, C, K, F[3+tracer_index], 
+                                                                          parameters, time)
+    end                                                      
     return nothing
 end
 
