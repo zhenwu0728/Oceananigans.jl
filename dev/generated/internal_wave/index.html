@@ -99,175 +99,77 @@ b₀(x, y, z) = a(x, z) * B * sin(k*x + m*z) + N^2 * z</code></pre><pre><code cl
 domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [0.0, -6.283185307179586]
   resolution (Nx, Ny, Nz) = (128, 1, 128)
    halo size (Hx, Hy, Hz) = (1, 1, 1)
-grid spacing (Δx, Δy, Δz) = (0.04908738521234052, 6.283185307179586, 0.04908738521234052), Clock{Float64}(0.0, 0), BuoyancyTracer(), FPlane{Float64}(0.2), (u = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ], v = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ], w = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]), (b = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ],), (pHY′ = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ], pNHS = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]), (u = Oceananigans.zeroforcing, v = Oceananigans.zeroforcing, w = Oceananigans.zeroforcing, b = Oceananigans.zeroforcing), ConstantIsotropicDiffusivity{Float64,NamedTuple{(:b,),Tuple{Float64}}}(1.0e-6, (b = 1.0e-6,)), (solution = (u = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing))), v = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing))), w = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Oceananigans.NoPenetration,Nothing},BoundaryCondition{Oceananigans.NoPenetration,Nothing}}(BoundaryCondition{Oceananigans.NoPenetration,Nothing}(nothing), BoundaryCondition{Oceananigans.NoPenetration,Nothing}(nothing))), b = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing)))), tendency = (u = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing))), v = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing))), w = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Oceananigans.NoPenetration,Nothing},BoundaryCondition{Oceananigans.NoPenetration,Nothing}}(BoundaryCondition{Oceananigans.NoPenetration,Nothing}(nothing), BoundaryCondition{Oceananigans.NoPenetration,Nothing}(nothing))), b = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing)))), pressure = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing)))), Oceananigans.AdamsBashforthTimestepper{Float64,NamedTuple{(:u, :v, :w, :b),Tuple{Field{Oceananigans.Face,Oceananigans.Cell,Oceananigans.Cell,OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}},RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}},Field{Oceananigans.Cell,Oceananigans.Face,Oceananigans.Cell,OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}},RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}},Field{Oceananigans.Cell,Oceananigans.Cell,Oceananigans.Face,OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}},RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}},Field{Oceananigans.Cell,Oceananigans.Cell,Oceananigans.Cell,OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}},RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}}}}}((u = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ], v = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ], w = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ], b = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]), (u = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ], v = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ], w = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ], b = [0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-...
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]
-
-[0.0 0.0 0.0; 0.0 0.0 0.0; … ; 0.0 0.0 0.0; 0.0 0.0 0.0… ; ]), 0.125), Oceananigans.PoissonSolverCPU{Oceananigans.PPN,Array{Float64,3},Array{Complex{Float64},3},FFTW.cFFTWPlan{Complex{Float64},-1,true,3},FFTW.r2rFFTWPlan{Complex{Float64},(5,),true,3},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,true,3},Float64},FFTW.r2rFFTWPlan{Complex{Float64},(4,),true,3}}(Oceananigans.PPN(), [0.0; 0.9997992185115969; … ; 3.996788270156917; 0.9997992185116003], [0.0], [0.0]
+grid spacing (Δx, Δy, Δz) = (0.04908738521234052, 6.283185307179586, 0.04908738521234052), Clock{Float64}(0.0, 0), BuoyancyTracer(), FPlane{Float64}(0.2), (u = Field at (Oceananigans.Face, Oceananigans.Cell, Oceananigans.Cell)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+, v = Field at (Oceananigans.Cell, Oceananigans.Face, Oceananigans.Cell)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+, w = Field at (Oceananigans.Cell, Oceananigans.Cell, Oceananigans.Face)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+), (b = Field at (Oceananigans.Cell, Oceananigans.Cell, Oceananigans.Cell)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+,), (pHY′ = Field at (Oceananigans.Cell, Oceananigans.Cell, Oceananigans.Cell)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+, pNHS = Field at (Oceananigans.Cell, Oceananigans.Cell, Oceananigans.Cell)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+), (u = Oceananigans.zeroforcing, v = Oceananigans.zeroforcing, w = Oceananigans.zeroforcing, b = Oceananigans.zeroforcing), ConstantIsotropicDiffusivity{Float64,NamedTuple{(:b,),Tuple{Float64}}}(1.0e-6, (b = 1.0e-6,)), (solution = (u = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing))), v = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing))), w = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Oceananigans.NoPenetration,Nothing},BoundaryCondition{Oceananigans.NoPenetration,Nothing}}(BoundaryCondition{Oceananigans.NoPenetration,Nothing}(nothing), BoundaryCondition{Oceananigans.NoPenetration,Nothing}(nothing))), b = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing)))), tendency = (u = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing))), v = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing))), w = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Oceananigans.NoPenetration,Nothing},BoundaryCondition{Oceananigans.NoPenetration,Nothing}}(BoundaryCondition{Oceananigans.NoPenetration,Nothing}(nothing), BoundaryCondition{Oceananigans.NoPenetration,Nothing}(nothing))), b = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing)))), pressure = (x = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), y = CoordinateBoundaryConditions{BoundaryCondition{Periodic,Nothing},BoundaryCondition{Periodic,Nothing}}(BoundaryCondition{Periodic,Nothing}(nothing), BoundaryCondition{Periodic,Nothing}(nothing)), z = CoordinateBoundaryConditions{BoundaryCondition{Flux,Nothing},BoundaryCondition{Flux,Nothing}}(BoundaryCondition{Flux,Nothing}(nothing), BoundaryCondition{Flux,Nothing}(nothing)))), Oceananigans.AdamsBashforthTimestepper{Float64,NamedTuple{(:u, :v, :w, :b),Tuple{Field{Oceananigans.Face,Oceananigans.Cell,Oceananigans.Cell,OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}},RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}},Field{Oceananigans.Cell,Oceananigans.Face,Oceananigans.Cell,OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}},RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}},Field{Oceananigans.Cell,Oceananigans.Cell,Oceananigans.Face,OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}},RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}},Field{Oceananigans.Cell,Oceananigans.Cell,Oceananigans.Cell,OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}},RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}}}}}((u = Field at (Oceananigans.Face, Oceananigans.Cell, Oceananigans.Cell)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+, v = Field at (Oceananigans.Cell, Oceananigans.Face, Oceananigans.Cell)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+, w = Field at (Oceananigans.Cell, Oceananigans.Cell, Oceananigans.Face)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+, b = Field at (Oceananigans.Cell, Oceananigans.Cell, Oceananigans.Cell)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+), (u = Field at (Oceananigans.Face, Oceananigans.Cell, Oceananigans.Cell)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+, v = Field at (Oceananigans.Cell, Oceananigans.Face, Oceananigans.Cell)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+, w = Field at (Oceananigans.Cell, Oceananigans.Cell, Oceananigans.Face)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+, b = Field at (Oceananigans.Cell, Oceananigans.Cell, Oceananigans.Cell)
+├── data: OffsetArrays.OffsetArray{Float64,3,Array{Float64,3}}
+└── grid: RegularCartesianGrid{Float64,StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}}
+    ├── size: (128, 1, 128)
+    └── domain: x ∈ [0.0, 6.283185307179586], y ∈ [0.0, 6.283185307179586], z ∈ [-6.283185307179586, 0.0]
+), 0.125), Oceananigans.PoissonSolverCPU{Oceananigans.PPN,Array{Float64,3},Array{Complex{Float64},3},FFTW.cFFTWPlan{Complex{Float64},-1,true,3},FFTW.r2rFFTWPlan{Complex{Float64},(5,),true,3},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,true,3},Float64},FFTW.r2rFFTWPlan{Complex{Float64},(4,),true,3}}(Oceananigans.PPN(), [0.0; 0.9997992185115969; … ; 3.996788270156917; 0.9997992185116003], [0.0], [0.0]
 
 [0.2499874504010214]
 
@@ -307,7 +209,7 @@ Complex{Float64}[0.0 + 0.0im; 0.0 + 0.0im; … ; 0.0 + 0.0im; 0.0 + 0.0im], FFTW
 zplot(u) = repeat(dropdims(znodes(u), dims=2), u.grid.Nx, 1)
 
 function plot_field!(ax, w, t)
-    pcolormesh(xplot(w), zplot(w), data(model.velocities.w)[:, 1, :])
+    pcolormesh(xplot(w), zplot(w), interior(model.velocities.w)[:, 1, :])
     xlabel(L&quot;x&quot;)
     ylabel(L&quot;z&quot;)
     title(@sprintf(&quot;\$ \\omega t / 2 \\pi = %.2f\$&quot;, t*ω/2π))
@@ -317,7 +219,7 @@ function plot_field!(ax, w, t)
 end
 
 close(&quot;all&quot;)
-fig, ax = subplots()</code></pre><pre><code class="language-none">(PyPlot.Figure(PyObject &lt;Figure size 640x480 with 1 Axes&gt;), PyObject &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7ff8437a2250&gt;)</code></pre><h2 id="A-wave-packet-on-the-loose-1">A wave packet on the loose<a class="docs-heading-anchor" href="#A-wave-packet-on-the-loose-1" title="Permalink"></a></h2><p>Finally, we release the packet:</p><pre><code class="language-julia">for i = 1:10
+fig, ax = subplots()</code></pre><pre><code class="language-none">(PyPlot.Figure(PyObject &lt;Figure size 640x480 with 1 Axes&gt;), PyObject &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f9650302350&gt;)</code></pre><h2 id="A-wave-packet-on-the-loose-1">A wave packet on the loose<a class="docs-heading-anchor" href="#A-wave-packet-on-the-loose-1" title="Permalink"></a></h2><p>Finally, we release the packet:</p><pre><code class="language-julia">for i = 1:10
     time_step!(model, Nt = 200, Δt = 0.001 * 2π/ω)
     plot_field!(ax, model.velocities.w, model.clock.time)
-end</code></pre><p><em>This page was generated using <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a>.</em></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../two_dimensional_turbulence/">« Two-dimensional turbulence</a><a class="docs-footer-nextpage" href="../../verification/taylor_green_vortex/">Taylor-Green vortex »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Thursday 24 October 2019 09:37">Thursday 24 October 2019</span>. Using Julia version 1.2.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+end</code></pre><p><em>This page was generated using <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a>.</em></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../two_dimensional_turbulence/">« Two-dimensional turbulence</a><a class="docs-footer-nextpage" href="../../verification/taylor_green_vortex/">Taylor-Green vortex »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Thursday 24 October 2019 19:27">Thursday 24 October 2019</span>. Using Julia version 1.2.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
