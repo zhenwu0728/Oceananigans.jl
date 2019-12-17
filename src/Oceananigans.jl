@@ -30,10 +30,10 @@ export
     ModelForcing, SimpleForcing,
 
     # Coriolis forces
-    FPlane, BetaPlane,
+    FPlane, BetaPlane, NonTraditionalFPlane,
 
     # Buoyancy and equations of state
-    BuoyancyTracer, SeawaterBuoyancy, LinearEquationOfState,
+    BuoyancyTracer, SeawaterBuoyancy, LinearEquationOfState, RoquetIdealizedNonlinearEquationOfState,
 
     # Surface waves via Craik-Leibovich equations
     SurfaceWaves,
