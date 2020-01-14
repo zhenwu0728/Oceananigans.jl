@@ -11,7 +11,8 @@ const Δμ = 0.01L    # Sponge layer width [m] set to 1% of the domain height.
 @inline Fw(grid, U, Φ, i, j, k) = @inbounds -μ(grid.zF[k], grid.Lz) * U.w[i, j, k]
 
 forcing = ModelForcing(Fu=Fu, Fv=Fv, Fw=Fw)
-model = Model(grid=grid, forcing=forcing)</code></pre><ol><li>Implementing a point source of fresh meltwater from ice shelf melting via a relaxation term</li></ol><pre><code class="language-julia">Nx = Ny = Nz = 16
+model = Model(grid=grid, forcing=forcing)</code></pre><ol><li>Implementing a point source of fresh meltwater from ice shelf melting via a relaxation term</li></ol><pre><code class="language-">using Oceananigans # hide
+Nx = Ny = Nz = 16
 Lx = Ly = Lz = 1000
 grid = RegularCartesianGrid(size=(Nx, Ny, Nz), length=(Lx, Ly, Lz))
 
@@ -33,7 +34,7 @@ source_index = (Int(Nx/2), 1, Int(Nz/2))
 
 params = (source_index=source_index, T_source=T_source, S_source=S_source, λ=λ)
 
-forcing = ModelForcing(T=T_point_source, S=S_point_source)</code></pre><pre><code class="language-none">(u = Oceananigans.zeroforcing, v = Oceananigans.zeroforcing, w = Oceananigans.zeroforcing, T = Main.##ex-#717.T_point_source, S = Main.##ex-#717.S_point_source)</code></pre><ol><li>You can also define a forcing as a function of <code>(x, y, z, t)</code> or <code>(x, y, z, t, params)</code> using the <code>SimpleForcing</code></li></ol><p>constructor.</p><pre><code class="language-julia">const a = 2.1
+forcing = ModelForcing(T=T_point_source, S=S_point_source)</code></pre><ol><li>You can also define a forcing as a function of <code>(x, y, z, t)</code> or <code>(x, y, z, t, params)</code> using the <code>SimpleForcing</code></li></ol><p>constructor.</p><pre><code class="language-julia">const a = 2.1
 fun_forcing(x, y, z, t) = a * exp(z) * cos(t)
 u_forcing = SimpleForcing(fun_forcing)
 
@@ -43,4 +44,4 @@ v_forcing = SimpleForcing(parameterized_forcing, parameters=(μ=42, λ=0.1, ω=�
 forcing = ModelForcing(u=u_forcing, v=v_forcing)
 
 grid = RegularCartesianGrid(size=(16, 16, 16), length=(1, 1, 1))
-model = Model(grid=grid, forcing=forcing)</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../boundary_conditions/">« Boundary conditions</a><a class="docs-footer-nextpage" href="../model_parameters/">Model parameters »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Saturday 4 January 2020 16:36">Saturday 4 January 2020</span>. Using Julia version 1.2.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+model = Model(grid=grid, forcing=forcing)</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../boundary_conditions/">« Boundary conditions</a><a class="docs-footer-nextpage" href="../model_parameters/">Model parameters »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Tuesday 14 January 2020 12:19">Tuesday 14 January 2020</span>. Using Julia version 1.2.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
