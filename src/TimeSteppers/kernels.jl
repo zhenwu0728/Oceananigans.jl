@@ -112,6 +112,7 @@ function update_velocities!(U, grid, Δt, G, pNHS)
     @loop_xyz i j k grid begin
         @inbounds U.u[i, j, k] += (G.u[i, j, k] - ∂xᶠᵃᵃ(i, j, k, grid, pNHS)) * Δt
         @inbounds U.v[i, j, k] += (G.v[i, j, k] - ∂yᵃᶠᵃ(i, j, k, grid, pNHS)) * Δt
+        @inbounds U.w[i, j, k] += (G.w[i, j, k] - ∂zᵃᵃᶠ(i, j, k, grid, pNHS)) * Δt
     end
     return nothing
 end
