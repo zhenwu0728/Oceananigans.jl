@@ -100,6 +100,10 @@ function time_step_precomputations!(diffusivities, pressures, velocities, tracer
     calculate_diffusivities!(diffusivities, model.architecture, model.grid, model.closure, model.buoyancy,
                              velocities, tracers)
 
+    for κₑ in diffusivities.κₑ
+        @. @views κₑ.parent[:, :, model.grid.Nz] = 1e-3
+    end
+
     # Diffusivities share bcs with pressure:
     fill_halo_regions!(diffusivities, model.boundary_conditions.pressure, model.architecture, model.grid)
 
