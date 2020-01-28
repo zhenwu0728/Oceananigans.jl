@@ -101,7 +101,7 @@ function time_step_precomputations!(diffusivities, pressures, velocities, tracer
                              velocities, tracers)
 
     for (i, κₑ) in enumerate(diffusivities.κₑ)
-        @. @views κₑ.parent[:, :, model.grid.Nz+1] = 1e-4
+        @. @views κₑ.parent[:, :, model.grid.Nz+1] = 2e-4
     end
 
     # Diffusivities share bcs with pressure:
