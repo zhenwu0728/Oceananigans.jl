@@ -59,6 +59,20 @@ function ChannelBCs(;  north = BoundaryCondition(Flux, nothing),
     return FieldBoundaryConditions(x, y, z)
 end
 
+"""
+    ShoeBoxBCs(;  west = BoundaryCondition(Flux, nothing),
+                  east = BoundaryCondition(Flux, nothing),
+                 north = BoundaryCondition(Flux, nothing),
+                 south = BoundaryCondition(Flux, nothing),
+                   top = BoundaryCondition(Flux, nothing),
+                bottom = BoundaryCondition(Flux, nothing))
+
+Construct `FieldBoundaryConditions` with specified `west` (-x),
+`east` (+x), `north` (+y), `south` (-y), `top` (+z) and `bottom`
+(-z) boundary conditions for u, v, and tracer fields.
+
+`ShoeBoxBCs` cannot be applied to the the vertical velocity w.
+"""
 function ShoeBoxBCs(;  north = BoundaryCondition(Flux, nothing),
                        south = BoundaryCondition(Flux, nothing),
                          top = BoundaryCondition(Flux, nothing),

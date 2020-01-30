@@ -7,6 +7,7 @@ export
     FieldBoundaryConditions, HorizontallyPeriodicBCs, ChannelBCs, ShoeBoxBCs,
     SolutionBoundaryConditions, HorizontallyPeriodicSolutionBCs, ChannelSolutionBCs, ShoeBoxSolutionBCs,
     TendenciesBoundaryConditions, PressureBoundaryConditions,
+    DiffusivityBoundaryConditions, DiffusivitiesBoundaryConditions,
     ModelBoundaryConditions, BoundaryFunction,
     apply_z_bcs!, apply_y_bcs!,
     fill_halo_regions!, zero_halo_regions!
@@ -20,11 +21,7 @@ include("boundary_condition_types.jl")
 include("boundary_condition.jl")
 include("coordinate_boundary_conditions.jl")
 include("field_boundary_conditions.jl")
-include("solution_boundary_conditions.jl")
-include("tracer_boundary_conditions.jl")
-include("tendency_boundary_conditions.jl")
-include("pressure_boundary_conditions.jl")
-include("model_boundary_conditions.jl")
+include("solution_and_model_boundary_conditions.jl")
 include("boundary_function.jl")
 include("show_boundary_conditions.jl")
 
