@@ -51,3 +51,12 @@ function ChannelSolutionBCs(;
 
     return merge((u=u, v=v, w=w), tracerbcs)
 end
+
+function ShoeBoxSolutionBCs(;
+    u = ShoeBoxBCs(west=NoPenetrationBC(), east=NoPenetrationBC()),
+    v = ShoeBoxBCs(north=NoPenetrationBC(), south=NoPenetrationBC()),
+    w = ShoeBoxBCs(top=NoPenetrationBC(), bottom=NoPenetrationBC()),
+    tracerbcs...)
+
+    return merge((u=u, v=v, w=w), tracerbcs)
+end

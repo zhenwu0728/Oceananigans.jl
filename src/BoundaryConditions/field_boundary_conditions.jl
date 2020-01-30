@@ -58,3 +58,18 @@ function ChannelBCs(;  north = BoundaryCondition(Flux, nothing),
 
     return FieldBoundaryConditions(x, y, z)
 end
+
+function ShoeBoxBCs(;  north = BoundaryCondition(Flux, nothing),
+                       south = BoundaryCondition(Flux, nothing),
+                         top = BoundaryCondition(Flux, nothing),
+                      bottom = BoundaryCondition(Flux, nothing),
+                        west = BoundaryCondition(Flux, nothing),
+                        east = BoundaryCondition(Flux, nothing)
+                    )
+
+    x = CoordinateBoundaryConditions(west, east)
+    y = CoordinateBoundaryConditions(south, north)
+    z = CoordinateBoundaryConditions(bottom, top)
+
+    return FieldBoundaryConditions(x, y, z)
+end

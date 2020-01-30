@@ -23,8 +23,10 @@ Notice that open boundary conditions and radiation boundary conditions can be im
 conditions defined by a function or array.
 
 ## Default boundary conditions
-By default, periodic boundary conditions are applied on all fields along periodic dimensions. All other boundary
-conditions are no-flux, except for velocities normal to a wall which get no-penetration boundary conditions.
+By default, periodic boundary conditions are applied on all fields along horizontal dimensions.
+All horizontal velocities are periodic and free slip at the boundaries.
+No normal flow boundary conditions are applied at the top and bottom boundaries.
+Tracer boundary conditions are no-flux at the top and bottom and periodic elsewhere.
 
 ## Boundary condition structures
 Oceananigans uses a hierarchical structure to expressing boundary conditions.
