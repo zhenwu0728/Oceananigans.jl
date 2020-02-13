@@ -52,7 +52,10 @@ export
     # Turbulence closures
     ConstantIsotropicDiffusivity, ConstantAnisotropicDiffusivity,
     AnisotropicBiharmonicDiffusivity,
-    ConstantSmagorinsky, AnisotropicMinimumDissipation
+    ConstantSmagorinsky, AnisotropicMinimumDissipation,
+
+    # Particles
+    Particles
 
 # Standard library modules
 using Printf
@@ -151,6 +154,7 @@ include("Diagnostics/Diagnostics.jl")
 include("OutputWriters/OutputWriters.jl")
 include("TimeSteppers/TimeSteppers.jl")
 include("AbstractOperations/AbstractOperations.jl")
+include("Particles/Particles.jl")
 
 #####
 ##### Re-export stuff from submodules
@@ -169,5 +173,6 @@ using .Solvers
 using .Forcing
 using .Models
 using .TimeSteppers
+using .Particles
 
 end # module
