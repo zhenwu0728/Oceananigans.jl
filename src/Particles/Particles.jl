@@ -7,7 +7,15 @@ mutable struct Particle
     t :: Array
 end
 
-function Base.push!(particle::Particle, x<:Number, y<:Number, z<:Number, t<:Number)
+function Particle()
+    x = Float64[]
+    y = Float64[]
+    z = Float64[]
+    t = Float64[]
+    return Particle(x,y,z,t)
+end
+
+function Base.push!(particle::Particle, x::Number, y::Number, z::Number, t::Number)
     push!(particle.x, x)
     push!(particle.y, y)
     push!(particle.z, z)
