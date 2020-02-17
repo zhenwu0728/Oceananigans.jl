@@ -238,8 +238,8 @@ function agent_diffusionH(particle,grid,κh)
     xi, yi = trunc(Int,particle.x[end]),trunc(Int,particle.y[end])
     x = particle.x[end] + rand(Uniform(-1.0,1.0)) * κh / (grid.xF[xi-1] - grid.xF[xi])
     y = particle.x[end] + rand(Uniform(-1.0,1.0)) * κh / (grid.yF[yi-1] - grid.yF[yi])
-    x = periodic_domain(g.Nx, x)
-    y = periodic_domain(g.Ny, y)
+    x = periodic_domain(grid.Nx, x)
+    y = periodic_domain(grid.Ny, y)
     return x, y
 end
 
@@ -250,7 +250,7 @@ Using a random walk algorithm for vertical diffusion
 function agent_diffusionV(particle,grid,κv)
     zi= trunc(Int,particle.z[end])
     z = particle.z[end] + rand(Uniform(-1.0,1.0)) * κv / (grid.zF[zi-1] - grid.zF[zi])
-    z = max(1.1, min(g.Nz-0.1, z))
+    z = max(1.1, min(grid.Nz-0.1, z))
     return z
 end
 

@@ -77,6 +77,8 @@ using Base: @propagate_inbounds
 using Statistics: mean
 using GPUifyLoops: @launch, @loop, @unroll
 
+using Random, Distributions
+
 import Base:
     +, -, *, /,
     size, length, eltype,
