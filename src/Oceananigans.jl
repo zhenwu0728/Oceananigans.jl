@@ -9,14 +9,23 @@ export
     CPU, GPU,
 
     # Logging
-    ModelLogger, Diagnostic, Setup, Simulation,
+    ModelLogger, Diagnostic, Setup,
 
     # Grids
     Periodic, Bounded, Flat,
     RegularCartesianGrid, VerticallyStretchedCartesianGrid,
 
+    # Boundary conditions
+    BoundaryCondition,
+    Flux, Value, Gradient,
+    FluxBoundaryCondition, ValueBoundaryCondition, GradientBoundaryCondition,
+    CoordinateBoundaryConditions, FieldBoundaryConditions,
+    UVelocityBoundaryConditions, VVelocityBoundaryConditions, WVelocityBoundaryConditions,
+    TracerBoundaryConditions, PressureBoundaryConditions,
+    BoundaryFunction,
+
     # Fields and field manipulation
-    Field, CellField, FaceFieldX, FaceFieldY, FaceFieldZ,
+    Field, CellField, XFaceField, YFaceField, ZFaceField,
     interior, set!,
 
     # Forcing functions
@@ -32,19 +41,16 @@ export
     # Surface waves via Craik-Leibovich equations
     SurfaceWaves,
 
-    # Boundary conditions
-    BoundaryCondition,
-    Flux, Gradient, Value,
-    CoordinateBoundaryConditions, FieldBoundaryConditions, HorizontallyPeriodicBCs, ChannelBCs,
-    BoundaryConditions, SolutionBoundaryConditions, HorizontallyPeriodicSolutionBCs, ChannelSolutionBCs,
-    BoundaryFunction, getbc, setbc!,
-
     # Time stepping
     time_step!,
     TimeStepWizard, update_Δt!,
 
     # Models
-    Model, ChannelModel, NonDimensionalModel,
+    IncompressibleModel, NonDimensionalModel,
+
+    # Simulations
+    Simulation, run!,
+    iteration_limit_exceeded, stop_time_exceeded, wall_time_limit_exceeded,
 
     # Utilities
     prettytime, pretty_filesize,
@@ -91,24 +97,31 @@ import Base:
 #####
 
 """
-    AbstractPoissonSolver
+    Cell
 
-Abstract supertype for solvers for Poisson's equation.
+A type describing the location at the center of a grid cell.
 """
-abstract type AbstractPoissonSolver end
+struct Cell end
+
+"""
+	Face
+
+A type describing the location at the face of a grid cell.
+"""
+struct Face end
 
 """
     AbstractDiagnostic
 
-Abstract supertype for types that compute diagnostic information from the current model
-state.
+Abstract supertype for diagnostics that compute information from the current
+model state.
 """
 abstract type AbstractDiagnostic end
 
 """
     AbstractOutputWriter
 
-Abstract supertype for types that perform input and output.
+Abstract supertype for output writers that write data to disk.
 """
 abstract type AbstractOutputWriter end
 
@@ -142,19 +155,20 @@ end
 include("Utils/Utils.jl")
 include("Logger.jl")
 include("Grids/Grids.jl")
-include("Fields/Fields.jl")
 include("Operators/Operators.jl")
+include("BoundaryConditions/BoundaryConditions.jl")
+include("Fields/Fields.jl")
 include("Coriolis/Coriolis.jl")
 include("Buoyancy/Buoyancy.jl")
 include("SurfaceWaves.jl")
 include("TurbulenceClosures/TurbulenceClosures.jl")
-include("BoundaryConditions/BoundaryConditions.jl")
 include("Solvers/Solvers.jl")
 include("Forcing/Forcing.jl")
 include("Models/Models.jl")
+include("TimeSteppers/TimeSteppers.jl")
 include("Diagnostics/Diagnostics.jl")
 include("OutputWriters/OutputWriters.jl")
-include("TimeSteppers/TimeSteppers.jl")
+include("Simulations.jl")
 include("AbstractOperations/AbstractOperations.jl")
 include("Particles/Particles.jl")
 
@@ -165,16 +179,19 @@ include("Particles/Particles.jl")
 using .Architectures
 using .Utils
 using .Grids
+using .BoundaryConditions
 using .Fields
 using .Coriolis
 using .Buoyancy
 using .SurfaceWaves
 using .TurbulenceClosures
-using .BoundaryConditions
 using .Solvers
 using .Forcing
 using .Models
 using .TimeSteppers
-using .Particles
+<<<<<<< HEAD
+=======
+using .Simulations
+>>>>>>> master
 
 end # module
