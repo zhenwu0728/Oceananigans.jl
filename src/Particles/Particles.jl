@@ -1,5 +1,6 @@
 module Particles
 using Distributions
+using Interpolations
 
 mutable struct Particle
     x :: Number
@@ -17,11 +18,14 @@ function Particle(grid)
 end
 
 """
-    generate_vel_itp(grid, vel)
+    generate_vel_itp(model)
 Use Interpolations.jl to generate interpolation objects
-'grid' is the grid information of Oceananigans.jl
 """
-function generate_vel_itp(grid, vel)
+function generate_vel_itp(model)
+    grid = model.grid
+    u = model.velocities.u.data.parent
+    v = model.velocities.v.data.parent
+    w = model.velocities.w.data.parent
     # deal with halo points
     xF = collect(grid.xF)
     pushfirst!(xF,xF[1]-(xF[2]-xF[1]))
@@ -40,9 +44,9 @@ function generate_vel_itp(grid, vel)
     pushfirst!(zC,zF[2]-(zC[1]-zF[2]))
     push!(zC,zF[end]+(zF[end]-zC[end]))
 
-    u_itp = interpolate((xF,yC,zC),vel.u,Gridded(Linear()))
-    v_itp = interpolate((xC,yF,zC),vel.v,Gridded(Linear()))
-    w_itp = interpolate((xC,yC,zF),vel.w,Gridded(Linear()))
+    u_itp = interpolate((xF,yC,zC),u,Gridded(Linear()))
+    v_itp = interpolate((xC,yF,zC),v,Gridded(Linear()))
+    w_itp = interpolate((xC,yC,zF),w,Gridded(Linear()))
     return (u_itp, v_itp, w_itp)
 end
 
@@ -81,7 +85,7 @@ Periodic domain is used
 'vel_itp' is the tuple contains interpolations of u, v, w velocites of current time step
 'g' is the grid information and 'ΔT' is time step
 """
-function particle_advection(particle,vel_itp,g,ΔT::Int64)
+function particle_advection(particle,vel_itp,g,ΔT)
     uvel, vvel, wvel = get_vels(particle.x, particle.y, particle.z, vel_itp)
     particle.x = particle.x + uvel*ΔT
     particle.y = particle.y + vvel*ΔT
@@ -89,12 +93,13 @@ function particle_advection(particle,vel_itp,g,ΔT::Int64)
     # periodic domain
     particle.x = periodic_domain(g.xF, particle.x)
     particle.y = periodic_domain(g.yF, particle.y)
+    return nothing
 end
 """
     particle_advectionRK4(particle, vel_itps, g, ΔT::Int64)
 'vel_itps' is an array of tuples containing interpolations of u, v, w velocites of current time step
 """
-function particle_advectionRK4(particle, vel_itps, g, ΔT::Int64)
+function particle_advectionRK4(particle, vel_itps, g, ΔT)
     u1,v1,w1 = get_vels(particle.x, particle.y, particle.z, vel_itps[1]) # velocites at t
     gx1 = periodic_domain(g.xF, particle.x + u1*0.5*ΔT)
     gy1 = periodic_domain(g.yF, particle.y + v1*0.5*ΔT)
@@ -118,6 +123,7 @@ function particle_advectionRK4(particle, vel_itps, g, ΔT::Int64)
     particle.y = periodic_domain(g.yF, particle.y + dy)
     particle.z = particle.z + dz
     particle.z = max(g.zF[1], min(g.zF[end], particle.z))
+    return nothing
 end
 
 """
@@ -127,6 +133,7 @@ Using a random walk algorithm for horizontal diffusion
 function agent_diffusionX(particle,g,κh)
     particle.x += rand(Uniform(-1.0,1.0)) * κh
     particle.x = periodic_domain(g.xF, particle.x)
+    return nothing
 end
 
 """
@@ -136,6 +143,7 @@ Using a random walk algorithm for horizontal diffusion
 function agent_diffusionY(particle,g,κh)
     particle.y += rand(Uniform(-1.0,1.0)) * κh
     particle.y = periodic_domain(g.yF, particle.y)
+    return nothing
 end
 """
     agent_diffusionZ(particle,g,κv)
@@ -144,6 +152,7 @@ Using a random walk algorithm for vertical diffusion
 function agent_diffusionZ(particle,g,κv)
     particle.z += rand(Uniform(-1.0,1.0)) * κv
     particle.z = max(g.zF[1], min(g.zF[end], particle.z))
+    return nothing
 end
 
 end
