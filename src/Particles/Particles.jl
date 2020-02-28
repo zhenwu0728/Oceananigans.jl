@@ -33,6 +33,7 @@ function generate_vel_itp(model)
     pushfirst!(yF,yF[1]-(yF[2]-yF[1]))
     zF = collect(grid.zF)
     pushfirst!(zF,zF[1]-(zF[2]-zF[1]))
+    pushfirst!(zF,zF[1]-(zF[2]-zF[1]))
 
     xC = collect(grid.xC)
     pushfirst!(xC,xF[2]-(xC[1]-xF[2]))
