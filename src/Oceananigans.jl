@@ -189,9 +189,7 @@ using .Solvers
 using .Forcing
 using .Models
 using .TimeSteppers
-<<<<<<< HEAD
-=======
 using .Simulations
->>>>>>> master
+using .Particles
 
 end # module
